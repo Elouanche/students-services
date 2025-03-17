@@ -1,21 +1,21 @@
-# Projet Laravel - Étapes d'initialisation
+# Laravel Project - Initialization Steps
 
-Ce projet utilise Laravel comme framework PHP. Voici les étapes pour initialiser et configurer correctement le projet après avoir cloné ou récupéré les dernières modifications.
+This project uses Laravel as the PHP framework along with Tailwind CSS for styling. Below are the steps to properly initialize and configure the project after cloning or retrieving the latest updates.
 
-## Prérequis
+## Prerequisites
 
-Avant de commencer, assure-toi d'avoir installé les outils suivants :
+Before starting, make sure you have the following tools installed:
 
-- **PHP** (version 8.x ou supérieure)
-- **Composer** (gestionnaire de dépendances PHP)
-- **Node.js** et **NPM** 
-- **MySQL** (ou tout autre système de gestion de base de données compatible)
+- **PHP** (version 8.x or higher)
+- **Composer** (PHP dependency manager)
+- **Node.js** and **NPM**
+- **MySQL** (or any other compatible database management system)
 
-## Étapes d'initialisation
+## Initialization Steps
 
-### 1. Cloner le projet
+### 1. Clone the Project
 
-Si ce n'est pas déjà fait, clone le projet depuis le dépôt Git :
+If you haven't already, clone the project from the Git repository:
 
 ```bash
 git clone https://github.com/sloth4roues/students-services.git
@@ -23,101 +23,93 @@ cd students-services
 cd Students-Services
 ```
 
-### 2. Installer les dépendances PHP
+### 2. Install PHP Dependencies
 
-Installe les dépendances PHP spécifiées dans le fichier `composer.json` :
+Install the PHP dependencies specified in the `composer.json` file:
 
 ```bash
 composer install
 ```
 
-Cela installera toutes les dépendances nécessaires pour le bon fonctionnement de l'application Laravel.
+This will install all necessary dependencies for the Laravel application to function properly.
 
-### 3. Installer les dépendances JavaScript
+### 3. Install JavaScript Dependencies
 
-Installer les dépendances front-end avec NPM :
+Install front-end dependencies using NPM:
 
-- Pour NPM :
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
 
-### 4. Configuration de l'environnement
+### 4. Configure the Environment
 
-Le fichier `.env` contient les variables d'environnement pour le projet, comme les informations de base de données, les clés API, etc.
+The `.env` file contains the environment variables for the project, such as database credentials, API keys, etc.
 
-- Si tu n'as pas de fichier `.env`, copie le fichier `.env.example` vers `.env` :
+- If you don't have an `.env` file, copy the `.env.example` file:
 
   ```bash
   cp .env.example .env
   ```
 
-- Ouvre le fichier `.env` et configure les paramètres suivants :
+- Open the `.env` file and configure the following settings:
+  
+  - **Database**: Set up database connection details (`DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
 
-  - **Base de données** : Configure les informations de connexion à la base de données (`DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
+### 5. Set Up the Database
 
-### 5. Configurer la base de données
+If the database is empty or there are migrations to apply, run the following commands:
 
-Si la base de données est encore vide ou qu'il y a des migrations à appliquer, exécute les commandes suivantes :
-
-- **Migrations** : Applique les migrations pour créer les tables de la base de données :
+- **Migrations**: Apply migrations to create database tables:
 
   ```bash
   php artisan migrate
   ```
 
-- Si tu veux aussi peupler la base de données avec des données d'exemple, exécute :
+- If you also want to seed the database with sample data, execute:
 
   ```bash
   php artisan db:seed
   ```
 
-- Attention, il faut aussi générer une clé : 
-```bash
-php artisan key:generate
-```
-### 6. Démarrer le serveur de développement
+- Additionally, generate an application key:
 
-Tu peux démarrer le serveur de développement intégré de Laravel pour voir si tout fonctionne correctement :
+  ```bash
+  php artisan key:generate
+  ```
+
+### 6. Start the Development Server
+
+You can start Laravel's built-in development server to check if everything is working correctly:
 
 ```bash
 php artisan serve
 ```
 
-Cela lancera le serveur à l'adresse [http://127.0.0.1:8000](http://127.0.0.1:8000).
+This will start the server at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ---
 
-## Commandes utiles
+## Useful Commands
 
-- **Lancer les migrations** : `php artisan migrate`
-- **Lancer les seeds** : `php artisan db:seed`
-- **Vider le cache** : `php artisan cache:clear`
-- **Démarrer le serveur local** : `php artisan serve`
-- **Générer la clé d'application** : `php artisan key:generate`
+- **Run Migrations**: `php artisan migrate`
+- **Run Seeds**: `php artisan db:seed`
+- **Clear Cache**: `php artisan cache:clear`
+- **Start Local Server**: `php artisan serve`
+- **Generate Application Key**: `php artisan key:generate`
 
-## Dépendances
+## Dependencies
 
-Le projet utilise les dépendances suivantes :
+This project utilizes the following dependencies:
 
-- **Laravel** : Framework PHP
-- **Composer** : Gestionnaire de dépendances PHP
-- **NPM** : Gestionnaire de dépendances JavaScript
-
----
-
-Si tu rencontres des problèmes, vérifie que tous les services (base de données, serveur de cache, etc.) sont bien en cours d'exécution et que la configuration dans le fichier `.env` est correcte.
+- **Laravel**: PHP framework
+- **Composer**: PHP dependency manager
+- **NPM**: JavaScript dependency manager
+- **Tailwind CSS**: Utility-first CSS framework
 
 ---
 
-Bonne chance et bon développement !
-```
+If you encounter any issues, ensure that all required services (database, cache server, etc.) are running and that the `.env` file is correctly configured.
 
-### Explication des sections :
+---
 
-1. **Cloner le projet** : Première étape pour récupérer le code source.
-2. **Installer les dépendances PHP et JavaScript** : Installations via Composer pour PHP et NPM/Yarn pour les dépendances front-end.
-3. **Configurer l'environnement** : Explication pour configurer le fichier `.env` avec les paramètres nécessaires.
-4. **Configurer la base de données** : Appliquer les migrations et éventuellement remplir la base de données avec des données d'exemple.
-5. **Vider le cache et les vues** : Commandes pour assurer que Laravel utilise la dernière configuration et vue.
-6. **Démarrer le serveur de développement** : Exécution du serveur intégré de Laravel pour tester l'application.
+Good luck and happy coding!
